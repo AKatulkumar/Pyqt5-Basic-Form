@@ -49,7 +49,7 @@ class Ui_Form(object):
 "color:rgb(0, 85, 255)")
         self.lblmessage.setText("")
         self.lblmessage.setObjectName("lblmessage")
-
+        self.btnsubmit.clicked.connect(self.Addnames)
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -60,7 +60,12 @@ class Ui_Form(object):
         self.label_2.setText(_translate("Form", "Firstname  "))
         self.label_3.setText(_translate("Form", "Lastname :"))
         self.btnsubmit.setText(_translate("Form", "SUBMIT"))
-
+    
+    def Addnames(self):
+        firstname = self.txtfirstname.text()
+        lastname = self.txtlastname.text()
+        fullname = firstname + " " + lastname
+        self.lblmessage.setText(fullname)
 
 if __name__ == "__main__":
     import sys
